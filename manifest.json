@@ -1,0 +1,13 @@
+{
+    "manifest_version": 3,
+    "name": "no more cookies",
+    "version": "1.0.0",
+    "author": "Kruemelmonster",
+    "action": {
+        "default_popup": "index.html",
+        "default_title": "cookie manager"
+    },
+    "description": "never again problems with cookies",
+    "icons": {}
+}
+3
