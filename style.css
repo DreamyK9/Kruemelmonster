@@ -1,0 +1,23 @@
+.startpopup {
+    min-width: 300px;
+    padding: 20px
+}
+
+#disagreenonrelevantcookies,
+#disagreeallcookies,
+#acceptallcookies {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    padding: 8px 16px;
+    margin-bottom: 30px;
+    border: 2px solid steelblue;
+    color: steelblue;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+#acceptallcookies:hover,
+#disagreeallcookies:hover,
+#disagreenonrelevantcookies:hover {
+    background-color: cyan;
+    color: darkblue;
+}
