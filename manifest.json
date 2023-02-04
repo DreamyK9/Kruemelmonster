@@ -1,0 +1,13 @@
+{
+  "name": "Cookie Banner on Google.de",
+  "description": "Banning Cookies on Google.de",
+  "version": "1.0",
+  "manifest_version": 3,
+  "permissions": ["activeTab"],
+  "content_scripts": [
+    {
+      "matches": ["https://www.google.de/*"],
+      "js": ["index.js"]
+    }
+  ]
+}
