@@ -1,13 +1,18 @@
 {
-    "manifest_version": 3,
-    "name": "no more cookies",
-    "version": "1.0.0",
-    "author": "Kruemelmonster",
-    "action": {
+  "name": "No More Cookies",
+  "description": "Banning Cookies on Google.de",
+  "version": "1.0.0",
+  "manifest_version": 3,
+  "permissions": ["activeTab"],
+  "content_scripts": [
+    {
+      "matches": ["https://www.google.de/*"],
+      "js": ["index.js"]
+    }
+  ]
+  "action": {
         "default_popup": "index.html",
         "default_title": "cookie manager"
     },
-    "description": "never again problems with cookies",
-    "icons": {}
+  "authors": "Krümelmonster"
 }
-3
