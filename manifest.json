@@ -1,18 +1,17 @@
 {
-  "name": "No More Cookies",
-  "description": "Banning Cookies on Google.de",
+  "name": "Krümelmonster",
+  "description": "Removing Cookie Banners across the web",
   "version": "1.0.0",
   "manifest_version": 3,
   "permissions": ["activeTab"],
   "content_scripts": [
     {
-      "matches": ["https://www.google.de/*"],
+      "matches": ["https://*/*", "http://*/*"],
       "js": ["index.js"]
     }
-  ]
+  ],
   "action": {
-        "default_popup": "index.html",
-        "default_title": "cookie manager"
-    },
-  "authors": "Krümelmonster"
+        "default_popup": "popup/index.html",
+        "default_title": "Krümelmonster"
+    }
 }
