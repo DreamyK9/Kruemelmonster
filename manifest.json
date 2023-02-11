@@ -9,10 +9,9 @@
       "matches": ["https://www.google.de/*"],
       "js": ["index.js"]
     }
-  ]
+  ],
   "action": {
         "default_popup": "index.html",
         "default_title": "cookie manager"
-    },
-  "authors": "Krümelmonster"
+    }
 }
