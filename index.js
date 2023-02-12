@@ -1,8 +1,7 @@
 // Code, der auf der Seite ausgeführt wird
 // Hier kommt der Code zum drücken der Cookie-Banner hin
 
-let buttonClicked = false;
-let declineButton;
+let declineButton = undefined;
 
 // URL überprüfen und passenden Button auswählen
 switch (window.location.host) {
@@ -17,9 +16,12 @@ switch (window.location.host) {
         break;
 }
 
-
-if (!buttonClicked) {
+// Wenn der Button nicht gefunden wird, weil
+// - die Seite nicht unterstützt wird
+// - der Button schon gedrückt wurde
+// - die Seite sich geändert hat
+// dann wird der Knopf nicht versucht zu drücken
+if (declineButton) {
     // Automatisches Klicken des "Ablehnen"-Buttons
     declineButton.click();
-    buttonClicked = true;
 }
