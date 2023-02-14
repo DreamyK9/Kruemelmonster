@@ -1,27 +1,53 @@
-// Code, der auf der Seite ausgeführt wird
-// Hier kommt der Code zum drücken der Cookie-Banner hin
+// Code, der auf der aktuellen Seite ausgeführt wird
+// Hier kommt der Code zum betätigen der Cookie-Banner hin
+
+
+let rules = [
+    {
+        "url": /www\.google\.[a-z]{2,}/,
+        "selector": "#W0wltc"
+    },
+    {
+        "url": "www\.ecosia\.org",
+        "selector": ".cookie-consent__action"
+    },
+    {
+        "url": "www.bing.com",
+        "selector": "#bnp_btn_reject"
+    },
+    {
+        "url": "www.microsoft.com",
+        "selector": "._1XuCi2WhiqeWRUVp3pnFG3"
+    }
+]
+
 
 let declineButton = undefined;
+let foundRule = undefined;
 
-// URL überprüfen und passenden Button auswählen
-switch (window.location.host) {
-    case "www.google.de":
-        declineButton = document.querySelector("#W0wltc");
-        break;
-    case "www.google.com":
-        declineButton = document.querySelector("#W0wltc");
-        break;
-    case "www.ecosia.org":
-        declineButton = document.querySelector(".cookie-consent__action");
-        break;
+foundRule = findMatchingRule();
+
+if (foundRule) {
+    declineBanner();
 }
 
-// Wenn der Button nicht gefunden wird, weil
-// - die Seite nicht unterstützt wird
-// - der Button schon gedrückt wurde
-// - die Seite sich geändert hat
-// dann wird der Knopf nicht versucht zu drücken
-if (declineButton) {
-    // Automatisches Klicken des "Ablehnen"-Buttons
-    declineButton.click();
+/* -------------------------------------------------------------------------- */
+
+function findMatchingRule() {
+    for (let r of rules) {
+        if (window.location.host.match(r.url))
+            return r;
+    }
+}
+
+
+function declineBanner() {
+    let declineButton = document.querySelector(foundRule.selector);
+
+    if (declineButton) {
+        declineButton.click();
+    } else {
+        // try again in 1 second
+        setTimeout(declineBanner, 1000);
+    }
 }
