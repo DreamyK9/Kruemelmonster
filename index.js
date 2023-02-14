@@ -14,6 +14,9 @@ switch (window.location.host) {
     case "www.ecosia.org":
         declineButton = document.querySelector(".cookie-consent__action");
         break;
+    case "www.bing.com":
+        declineButton = document.querySelector("#bnp_btn_decline");
+        break;
 }
 
 // Wenn der Button nicht gefunden wird, weil
