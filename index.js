@@ -4,7 +4,7 @@
 
 let rules = [
     {
-        "url": "www.google.com",
+        "url": /www\.google\.[a-z]{2,}/,
         "selector": "#W0wltc"
     },
     {
