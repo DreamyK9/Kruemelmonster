@@ -12,6 +12,7 @@ const Selector = {
 // possible action types
 const Action = {
     click: "click",
+    clickAll: "clickAll",
 }
 
 const rules = [
@@ -66,6 +67,27 @@ const rules = [
                 },
             }
         ]
+    },
+    {
+        "host": "www.speedrun.com",
+        "actions": [
+            {
+                "type": Action.click,
+                "delay": 2400,
+                "selector": {
+                    "query": "fc-cta-manage-options",
+                    "type": Selector.class
+                }
+            },
+            {
+                "type": Action.clickAll,
+                "delay": 50,
+                "selector": {
+                    "query": "fc-preference-legitimate-interest",
+                    "type": Selector.class
+                }
+            }
+        ]
     }
 ]
 
@@ -96,15 +118,31 @@ function declineBanner(rule) {
                     clickButton(action.selector);
                 }, action.delay);
                 break;
+            case Action.clickAll:
+                setTimeout(() => {
+                    clickAllButtons(action.selector);
+                }, action.delay);
+                break;
         }
     }
 }
 
 function clickButton(selector) {
     let button = getButton(selector);
-
+    console.log("Clicking button: ", button)
     if (button) {
         button.click();
+    }
+}
+
+
+function clickAllButtons(selector) {
+    let buttons = document.getElementsByClassName(selector.query);
+
+    if (buttons) {
+        for (let button of buttons) {
+            button.click();
+        }
     }
 }
 
