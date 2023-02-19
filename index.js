@@ -1,5 +1,5 @@
-// Code, der auf der aktuellen Seite ausgeführt wird
-// Hier kommt der Code zum betätigen der Cookie-Banner hin
+// Code, that should be executed on the currently opened website
+// Here goes the code for dealing with cookie banners
 
 
 let rules = [
