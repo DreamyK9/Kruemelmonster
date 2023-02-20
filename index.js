@@ -101,6 +101,10 @@ if (foundRule) {
 
 /* -------------------------------------------------------------------------- */
 
+function sleep(ms) {
+    return new Promise(resolve => setTimeout(resolve, ms));
+}
+
 function findMatchingRule() {
     for (let r of rules) {
         if (window.location.host.match(r.host)) {
@@ -109,26 +113,25 @@ function findMatchingRule() {
     }
 }
 
-
-function declineBanner(rule) {
+async function declineBanner(rule) {
     for (action of rule.actions) {
         switch (action.type) {
             case Action.click:
-                setTimeout(() => {
-                    clickButton(action.selector);
-                }, action.delay);
+                await clickButton(action)
                 break;
             case Action.clickAll:
-                setTimeout(() => {
-                    clickAllButtons(action.selector);
-                }, action.delay);
+                await clickAllButtons(action.selector)
                 break;
         }
     }
 }
 
-function clickButton(selector) {
-    let button = getButton(selector);
+async function clickButton(action) {
+    if (action.delay) {
+        await sleep(action.delay);
+    }
+
+    let button = getButton(action.selector);
     console.log("Clicking button: ", button)
     if (button) {
         button.click();
@@ -136,7 +139,11 @@ function clickButton(selector) {
 }
 
 
-function clickAllButtons(selector) {
+async function clickAllButtons(selector) {
+    if (selector.delay) {
+        await sleep(selector.delay);
+    }
+
     let buttons = document.getElementsByClassName(selector.query);
 
     if (buttons) {
