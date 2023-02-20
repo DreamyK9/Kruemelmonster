@@ -1,13 +1,13 @@
 {
   "name": "Krümelmonster",
-  "description": "Removing Cookie Banners across the web",
-  "version": "1.0.0",
+  "description": "Our mission is to remove Cookie Banners all across the web",
+  "version": "1.3.0",
   "manifest_version": 3,
   "permissions": ["activeTab"],
   "content_scripts": [
     {
       "matches": ["https://*/*", "http://*/*"],
-      "js": ["index.js"]
+      "js": ["types.js", "actions.js", "rules.js", "index.js"]
     }
   ],
   "action": {
