@@ -1,1 +1,1 @@
-// Code für das Popupfenster
+// Code for the popup window goes here
