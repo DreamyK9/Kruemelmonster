@@ -73,7 +73,7 @@ const rules = [
         "actions": [
             {
                 "type": Action.click,
-                "delay": 2400,
+                "delay": 1200,
                 "selector": {
                     "query": "fc-cta-manage-options",
                     "type": Selector.class
@@ -84,6 +84,14 @@ const rules = [
                 "delay": 50,
                 "selector": {
                     "query": "fc-preference-legitimate-interest",
+                    "type": Selector.class
+                }
+            },
+            {
+                "type": Action.click,
+                "delay": 50,
+                "selector": {
+                    "query": "fc-confirm-choices",
                     "type": Selector.class
                 }
             }
