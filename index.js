@@ -6,7 +6,7 @@
 const Selector = {
     class: "class",
     id: "id",
-    xml: "xml",
+    xpath: "xpath",
 }
 
 // possible action types
@@ -157,8 +157,9 @@ function getButton(selector) {
         case Selector.id:
             button = document.getElementById(selector.query);
             break;
-        case Selector.xml:
-            throw new Error("XML selectors are not supported yet");
+        case Selector.xpath:
+            // TODO: implement xPath selector
+            throw new Error("xPath selectors are not supported yet");
             break;
     }
 
