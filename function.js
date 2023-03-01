@@ -11,5 +11,3 @@ async function sendreport() {
 
 
 document.getElementById('report').addEventListener('click', sendreport)
-
-sendreport()
