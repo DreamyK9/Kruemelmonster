@@ -25,11 +25,7 @@
     cursor: help;
 }
 
-#report:hover {
-    background-color: rgb(18, 236, 58);
-    color: rgb(221, 23, 23);
-}
-
+#report:hover,
 #acceptallcookies:hover,
 #disagreeallcookies:hover,
 #disagreenonrelevantcookies:hover {
