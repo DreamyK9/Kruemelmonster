@@ -19,10 +19,11 @@
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     padding: 8px 16px;
     margin-bottom: 30px;
-    border: 2px solid rgb(114, 42, 16);
-    color: rgb(31, 228, 208);
+    background-color: rgba(230, 115, 115, 0.619);
+    border: 2px solid rgb(221, 23, 23);
+    color: rgb(248, 7, 7);
     font-size: 20px;
-    cursor: help;
+    cursor: pointer;
 }
 
 #report:hover,
