@@ -15,6 +15,21 @@
     cursor: pointer;
 }
 
+#report {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    padding: 8px 16px;
+    margin-bottom: 30px;
+    border: 2px solid rgb(114, 42, 16);
+    color: rgb(31, 228, 208);
+    font-size: 20px;
+    cursor: help;
+}
+
+#report:hover {
+    background-color: rgb(18, 236, 58);
+    color: rgb(221, 23, 23);
+}
+
 #acceptallcookies:hover,
 #disagreeallcookies:hover,
 #disagreenonrelevantcookies:hover {
