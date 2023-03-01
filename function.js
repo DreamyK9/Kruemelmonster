@@ -1,4 +1,4 @@
-async function sendreport(params) {
+async function sendreport() {
     document.getElementById("report").addEventListenerListener("click", function () {
         var xhr = new XMLHttpRequest();
         xhr.open("Get", "http://localhost:3000", true);
